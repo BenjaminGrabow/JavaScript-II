@@ -29,22 +29,87 @@ function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
 }
 
+// Higher order function using "cb" as the call back
+function getLength(arr, cb) {
+  return cb(arr.length);
+}
+
+// Function invocation
+getLength(items, function (last) {
+  console.log(last)
+});
+
+///////////////////////////////////////////////////////////
+
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
 }
+
+// Higher order function using "cb" as the call back
+function last(arr, cb) {
+  return cb(arr[arr.length - 1]);
+}
+
+// Function invocation
+last(items, function (last) {
+  console.log(last)
+});
+
+////////////////////////////////////////////////////////////
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
+// Higher order function using "cb" as the call back
+function sumNums(x, y, cb) {
+  return cb(x + y);
+}
+
+// Function invocation
+sumNums(8, 12, function (sum) {
+  console.log(sum);
+});
+
+///////////////////////////////////////////////////////////
+
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
 }
+
+// Higher order function using "cb" as the call back
+function multiplyNums(x, y, cb) {
+  return cb(x * y);
+};
+
+// Function invocation
+multiplyNums(20, 5, function (product) {
+  console.log(product);
+});
+
+//////////////////////////////////////////////////////////
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
 }
+
+// Higher order function using "cb" as the call back
+function contains(arr, item, cb) {
+  const checker = function () {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === item) {
+        return true;
+      }
+    } return false;
+  };
+  return cb(checker());
+};
+
+// Function invocation
+contains(items, 'Notebook', function (result) {
+  console.log(result);
+});
 
 /* STRETCH PROBLEM */
 
