@@ -119,3 +119,23 @@ function removeDuplicates(array, cb) {
   // Do not mutate the original array.
 }
 
+/////// Solution from Gabe:
+
+const withoutDupes = noDupes ([1, 1, 2, 2, 2, 4, 4, 4]);
+
+const noDupes = (arr) => {
+  return arr.reduce((acc, elem) => {
+    // the first time this runs, acc will be []
+    // the first time around, elem will be  
+    const currentAccumulator = acc;
+    // is the current elem in the box already ? (inn acc)
+    if (acc.indexOf(elem) === -1) {
+      // this would mean, the current element is not in currentAccumulator
+      // THE RETURN VALUE WILL BECOME THE ACC in the next iteration 
+      return currentAccumulator.concat(elem);
+    }
+    // the thing is in the box already so just return the acc as is 
+    return currentAccumulator;
+  }, []);
+}
+

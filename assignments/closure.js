@@ -22,26 +22,24 @@ empire();
 
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {}
+const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
-  
-  function outer() {
-    let score = 0;
 
-    function inner() {
-      score = score + 1;
-      console.log(score);
-    }
-    return inner;
+  let score = 0;
 
-  };
+  function inner() {
+    score = ++score;
+    console.log(score);
+  }
+  return inner;
 
+};
 
-const inner = outer();
+const inner = counter();
 inner();
 inner();
 inner();
-
+inner();
 
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
@@ -52,4 +50,16 @@ const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-};
+  let score = 0;
+
+  function increment() {
+    score = ++score;
+    console.log(score);
+  } increment()
+
+  function decrement() {
+    score = --score;
+    console.log(score);
+  } decrement();
+
+}; counterFactory();
