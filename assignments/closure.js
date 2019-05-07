@@ -4,27 +4,45 @@
 function empire() {
   const king = "Markus";
   console.log(`Hello ${king} your are awesome.`);
-   
+
   function village() {
-  console.log(`${king} do you really use closures ?`);
-   
-  function house() {
-  console.log(`Yeah ${king} is using closures !`);
-  }
-  house();
+    console.log(`${king} do you really use closures ?`);
+
+    function house() {
+      console.log(`Yeah ${king} is using closures !`);
+    }
+    house();
   }
   village();
-  };
-  empire();
+};
+empire();
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
 // ==== Challenge 2: Create a counter function ====
-const counter = () => {
+const counter = () => {}
   // Return a function that when invoked increments and returns a counter variable.
-};
+  
+  function outer() {
+    let score = 0;
+
+    function inner() {
+      score = score + 1;
+      console.log(score);
+    }
+    return inner;
+
+  };
+
+
+const inner = outer();
+inner();
+inner();
+inner();
+
+
 // Example usage: const newCounter = counter();
 // newCounter(); // 1
 // newCounter(); // 2

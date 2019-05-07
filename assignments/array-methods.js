@@ -103,9 +103,16 @@ console.log(onlyEvenNumberIDs);
 // Problem 2
 // Give only ID's with odd numbers
 let onlyOddNumberIDs = runners.filter(function (currentValue) {
-    return currentValue.id % 2 == 1;
+    return currentValue.id % 2 === 1;
 });
 
 console.log(onlyOddNumberIDs);
 
 // Problem 3
+// give only donations which are higher than 200
+let donationsOver200 = runners.filter(function (currentValue) {
+    return currentValue.donation >= 200;
+});
+
+console.log(donationsOver200);
+
