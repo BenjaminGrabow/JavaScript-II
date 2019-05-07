@@ -93,7 +93,19 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//Give only ID's with even numbers
+let onlyEvenNumberIDs = runners.filter(function (currentValue) {
+    return currentValue.id % 2 === 0;
+});
+
+console.log(onlyEvenNumberIDs);
 
 // Problem 2
+// Give only ID's with odd numbers
+let onlyOddNumberIDs = runners.filter(function (currentValue) {
+    return currentValue.id % 2 == 1;
+});
+
+console.log(onlyOddNumberIDs);
 
 // Problem 3
