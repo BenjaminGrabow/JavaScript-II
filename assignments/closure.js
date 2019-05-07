@@ -1,6 +1,22 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function empire() {
+  const king = "Markus";
+  console.log(`Hello ${king} your are awesome.`);
+   
+  function village() {
+  console.log(`${king} do you really use closures ?`);
+   
+  function house() {
+  console.log(`Yeah ${king} is using closures !`);
+  }
+  house();
+  }
+  village();
+  };
+  empire();
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
